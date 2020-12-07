@@ -31,13 +31,14 @@ public class ArraySequence implements IntegerSequence{
     return !(currentIndex > data.length);
   }
 
-  /*public ArraySequence(IntegerSequence otherseq) {
-    data = new int[otherseq.size()];
-    for (int i = 0; i < otherseq.size(); i++) {
-      data[i] = otherseq.get(i);
+  public ArraySequence(IntegerSequence otherseq) {
+    data = new int[otherseq.length()];
+    otherseq.reset();
+    for (int i = 0; i < otherseq.length(); i++) {
+      data[i] = otherseq.next();
     }
     currentIndex = 0;
-  }*/
+  }
 
 
 
