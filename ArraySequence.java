@@ -22,7 +22,10 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public int next() {
-    int val = data[currentIndex];
+    if (!hasNext()) {
+	throw new NoSuchElementException("No Next Value");
+    }
+    int val = currentIndex;
     currentIndex++;
     return val;
   }
