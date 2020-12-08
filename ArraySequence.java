@@ -31,13 +31,20 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public boolean hasNext() {
-    return !(currentIndex > data.length);
+    return (currentIndex <= data.length);
   }
 
   public ArraySequence(IntegerSequence otherseq) {
-    data = new int[otherseq.length()];
-    otherseq.reset();
+    data = new int[0];
     for (int i = 0; i < otherseq.length(); i++) {
+      int[] a = new int[data.length + 1];
+      for (int j = 0; j < data.length; j++) {
+	a[j] = data[j];
+      }
+      data = new int[a.length];
+      for (int j = 0; j < a.length; j++) {
+	data[j] = a[j];
+      }
       data[i] = otherseq.next();
     }
     currentIndex = 0;
