@@ -19,18 +19,21 @@ public class Range implements IntegerSequence {
 	}
 
 	public boolean hasNext() {
-		return (current <= end);
+		return (current < this.length());
 	}
 
 	//throws NoSuchElementException
 
 	public int next() {
-		int val = 0;
-		if (hasNext()) {
-			val = current;
-			current ++;
-		}
-		return val;
+		/*if (!this.hasNext())
+			throw new NoSuchElementExcpetion("No Next Value");
+		current++;
+		return current-1;*/
+		if (!hasNext())
+            		throw new NoSuchElementException("No Next Value");
+    		current++;
+    		return current -1;
+
 	}
 
 }
