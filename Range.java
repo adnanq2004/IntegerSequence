@@ -29,9 +29,10 @@ public class Range implements IntegerSequence {
 			throw new NoSuchElementExcpetion("No Next Value");
 		current++;
 		return current-1;*/
-		if (!hasNext())
+		if (!hasNext()) {
             		throw new NoSuchElementException("No Next Value");
-    		current++;
+    		}
+		current++;
     		return current -1;
 
 	}
