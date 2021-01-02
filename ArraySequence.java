@@ -17,16 +17,19 @@ public class ArraySequence implements IntegerSequence{
     	currentIndex = 0;
   }
 
-  /*public ArraySequence(IntegerSequence otherseq){
+  public ArraySequence(IntegerSequence otherseq){
 	data = new int[otherseq.length()];
 	otherseq.reset();
-	int i = 0;
+	/*int i = 0;
 	while(otherseq.hasNext()) {
 		data[i] = otherseq.next();
 		i++;
+	}*/
+	for (int i = 0; otherseq.hasNext(); i++) {
+		data[i] = otherseq.next();
 	}
 	otherseq.reset();
-  } */
+  }
 
   public void reset() {
     currentIndex = 0;
@@ -53,7 +56,7 @@ public class ArraySequence implements IntegerSequence{
     return (currentIndex < data.length);
   }
 
-  public ArraySequence(IntegerSequence otherseq) {
+  /*public ArraySequence(IntegerSequence otherseq) {
     data = new int[otherseq.length()];
     otherseq.reset();
     for (int i = 0; i < otherseq.length(); i++) {
@@ -61,7 +64,7 @@ public class ArraySequence implements IntegerSequence{
     }
     otherseq.reset();
     currentIndex = 0;
-  }
+  } */
 
 
 
